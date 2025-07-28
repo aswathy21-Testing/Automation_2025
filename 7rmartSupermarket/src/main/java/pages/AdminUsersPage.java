@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class AdminUsersPage {
 	
 	WebDriver driver;
+	PageUtility utility = new PageUtility();
 	
 	public AdminUsersPage(WebDriver driver) {
 		this.driver = driver;
@@ -37,8 +40,10 @@ public class AdminUsersPage {
 	}
 	
 	public void selectUserType(String uType) {
-		Select select = new Select(userType);
-		select.selectByValue(uType);
+	//	Select select = new Select(userType);
+	//	select.selectByValue(uType);
+		
+		utility.selectByValue(userType, uType); //use of utility class
 	}
 	
 	public void clickSave() {
